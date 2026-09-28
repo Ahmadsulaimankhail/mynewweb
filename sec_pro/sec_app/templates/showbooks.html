@@ -1,0 +1,68 @@
+{% extends "home.html" %}
+
+{% block main %}
+
+<div class="container">
+    <div class="form_head">
+        <div class="form_title">
+            <h2>Books</h2>
+            <p>Manage and view all books in the library.</p>
+        </div>
+        <div class="search">
+            <i class="bi bi-search"></i>
+            <input type="text" name="" id="" placeholder="search">
+
+        </div>
+        <!-- <i class="bi bi-book"></i> -->
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" name="" id=""></th>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Publication Year</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in lists %}
+
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+
+                <td>{{ i.bid }}</td>
+                <td>{{ i.bname }}</td>
+                <td>{{ i.author }}</td>
+                <td>{{ i.pub }}</td>
+                <td>{{ i.pubyear}}</td>
+                <td>{{ i.quantity }}</td>
+
+
+                <td class="action">
+                    <a href="{% url 'edit' i.bid %}">
+                        <span class="edit"><i class="bi bi-pencil-square"></i></span>
+
+                    </a>
+                    <a href="{% url 'delete_book' i.bid %}">
+                        <span class="delet"><i class="bi bi-trash3"></i></span>
+                    </a>
+
+
+
+
+                </td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

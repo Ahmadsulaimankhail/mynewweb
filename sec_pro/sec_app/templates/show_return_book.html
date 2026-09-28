@@ -1,0 +1,64 @@
+{% extends "home.html" %}
+{% block main %}
+
+<div class="container">
+    <div class="form_head">
+        <div class="form_title">
+            <h2>Lending Books</h2>
+            <p>Manage and view all currently borrowed books in the library.</p>
+        </div>
+        <!-- <div class="search">
+            <i class="bi bi-search"></i>
+            <input type="text" name="" id="" placeholder="search">
+
+        </div> -->
+
+        <form method="POST">
+            <div class="search">
+                {% csrf_token %}
+                <!-- <input type="text" name="searchValue"> -->
+                <i class="bi bi-search"></i>
+                <input type="text" name="searchValue" id="" placeholder="search">
+                <!-- <input type="submit" name="" id=""> -->
+            </div>
+        </form>
+        <!-- <i class="bi bi-book"></i> -->
+    </div>
+    <table>
+        <thead>
+            <tr>
+
+                <th>Member ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Issue Date</th>
+                <th>Return Date</th>
+                <th>Quantity</th>
+                <th>return</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in lend_book %}
+            <tr>
+                <td>{{ i.pid }}</td>
+                <td>{{ i.pname}}</td>
+                <td>{{ i.lname }}</td>
+                <td>{{ i.book_id}}</td>
+                <td>{{ i.book_name }}</td>
+                <td>{{ i.issue_date}}</td>
+                <td>{{ i.return_date}}</td>
+                <td>{{ i.quant }}</td>
+
+                <td class="action">
+                    <a href="{% url 'return_book' i.book_id %}">
+                        <span class="edit"><i class="bi bi-arrow-return-left"></i></span>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{%  static 'css/style.css' %}">
+    <title>library</title>
+</head>
+
+<body>
+    <header>
+        {% block header %}
+
+        <ul>
+            <li><i class="bi bi-list"></i></li>
+            <!-- <li style="font-weight: bold;">LIBRARY</li> -->
+
+
+            <li>
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+
+            <!-- Books -->
+            <li class="dropdown">
+                <span class="dropdown-title">
+                    Books
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+                <div class="dropdown-content">
+                    <a href="{% url 'form' %}">Add Book</a>
+                    <a href="{% url 'showbooks' %}">Books</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+
+                <span class="dropdown-title">
+                    Lending
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+                <div class="dropdown-content">
+                    <a href="{% url 'lend' %}">Lend Book</a>
+                    <a href="{% url 'lendbooks' %}">Lending Records</a>
+                    <a href="{% url 'return_form' %}">Return Book</a>
+
+                </div>
+            </li>
+            <li class="dropdown">
+                <span class="dropdown-title">
+                    Members
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+                <div class="dropdown-content">
+                    <a href="{% url 'addmember' %}">Add Member</a>
+                    <a href="{% url 'show_members' %}">Members</a>
+                </div>
+            </li>
+        </ul>
+        <ul>
+
+            <li><i class="bi bi-envelope-exclamation"></i></li>
+            <li><i class="bi bi-bell-fill"></i></li>
+            <li class="profile"><img src="{% static 'image/profile2.jpeg' %}" alt="">
+                <p>Prof.Andreason</p>
+            </li>
+            <li><i class="bi bi-three-dots-vertical"></i></li>
+        </ul>
+        {% endblock %}
+    </header>
+    <!-- ================================================================= -->
+    {% block main %}
+
+    <div class="image">
+
+    </div>
+
+    <div class="pragraf">
+        <!-- <p>WELCOM TO OUR</p> -->
+        <p>──── WELCOME TO OUR</p>
+        <h1>Library</h1>
+        <h2>Discover. Learn. Grow.</h2>
+        <p>
+            Your gateway to knowledge. Explore thousands of books, manage
+            <br>
+            your readings, and be part of our growing community.
+        </p>
+        <div class="button_home">
+            <a href="{% url 'showbooks' %}">Explore Books</a>
+            <a href="{% url 'addmember' %}">Add Member</a>
+
+        </div>
+
+
+    </div>
+
+    {% endblock %}
+    <!-- =============================================================== -->
+    {% block footer %}
+    <footer>
+        <div>
+            <!-- <p>Copyright@2026 .All rights reserved.Template by ColorIb</p> -->
+            <!-- <p>©2026 Library Management System. Discover books, explore knowledge and enjoy reading.</p> -->
+            <p>© 2026 Library. Making books and knowledge accessible to everyone.</p>
+            <p>Thank you for being part of our reading community.</p>
+
+        </div>
+    </footer>
+    {% endblock %}
+
+
+</body>
+
+</html

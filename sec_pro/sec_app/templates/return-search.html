@@ -1,0 +1,68 @@
+{% extends "home.html" %}
+{% block main %}
+
+<div class="container">
+    <div class="form_head">
+        <div class="form_title">
+            <h2>Return Books</h2>
+            <p>Return borrowed books and update their status in the library.</p>
+        </div>
+
+
+        <!-- <i class="bi bi-book"></i> -->
+   
+
+        <form method="POST">
+            <div class="search">
+
+                {% csrf_token %}
+                <!-- <input type="text" name="searchValue"> -->
+                <i class="bi bi-search"></i>
+
+                <input type="text" name="searchValue" id="" placeholder="search">
+
+                <!-- <input type="submit" name="" id=""> -->
+            </div>
+        </form>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book_Names</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Publisher Year</th>
+                <th>Quantity</th>
+                <th>Return</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in lists %}
+            <tr>
+                <td>{{ i.bid }}</td>
+                <td>{{ i.bname }}</td>
+                <td>{{ i.aouthor }}</td>
+                <td>{{ i.pub }}</td>
+                <td>{{ i.pubyear}}</td>
+                <td>{{ i.quantity }}</td>
+                <td class="action">
+                    <a href="">
+                        <span class="edit"><i class="bi bi-pencil-square"></i></span>
+                </td>
+
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+
+</div>
+{% endblock %}

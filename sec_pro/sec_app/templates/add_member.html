@@ -1,0 +1,48 @@
+{% extends "home.html" %}
+{% block main %}
+
+<div class="container">
+    <div class="form_head">
+        <div class="form_title">
+            <h2>Add Member </h2>
+            <p>Add a new member and save their information in the library.</p>
+        </div>
+        <i class="bi bi-person-add"></i>
+    </div>
+
+    <form method="POST" class="form_member">
+        {% csrf_token %}
+        <div class="input_box">
+            <div class="input_icon">
+                <i class="bi bi-person"></i>
+            </div>
+            <input type="text" name="id" placeholder="Enter Member ID">
+        </div>
+        <div class="input_box">
+            <div class="input_icon">
+                <i class="bi bi-person"></i>
+            </div>
+            <input type="text" name="name" placeholder="Enter Member Name">
+        </div>
+        <div class="input_box">
+            <div class="input_icon">
+                <i class="bi bi-person"></i>
+            </div>
+            <input type="text" name="email" placeholder="Enter Email Address">
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon">
+                <i class="bi bi-person"></i>
+            </div>
+            <input type="text" name="phon" placeholder="Enter Phone Number">
+        </div>
+
+        <div class="button-box">
+            <div class="button-icon"><i class="bi bi-send-check-fill"></i></div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+</div>
+{% endblock %}

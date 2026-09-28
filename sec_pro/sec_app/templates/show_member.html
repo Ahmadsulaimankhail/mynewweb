@@ -1,0 +1,54 @@
+{% extends "home.html" %}
+{% block main %}
+
+<div class="container">
+    <div class="form_head">
+        <div class="form_title">
+            <h2>Add Member </h2>
+            <p>Add a new member and save their information in the library.</p>
+        </div>
+        <i class="bi bi-person-add"></i>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" name="" id=""></th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>PHON</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in members %}
+
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>{{ i.id }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.phon }}</td>
+                <td class="action">
+
+                    <a href="{% url 'editMember' i.id %}">
+                        <span class="edit">
+                            <i class="bi bi-pencil-square"></i>
+                        </span>
+                    </a>
+                    <a href="{% url 'deletMember' i.id %}">
+                        <span class="delet"><i class="bi bi-trash3"></i></span>
+                    </a>
+
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <div>
+    </div>
+</div>
+
+{% endblock %}

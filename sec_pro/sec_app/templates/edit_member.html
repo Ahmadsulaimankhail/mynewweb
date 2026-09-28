@@ -1,0 +1,40 @@
+{% extends "home.html" %}
+{% block main %}
+
+<div class="container">
+    <div class="form_head">
+        <div class="form_title">
+            <h2>Edit Member</h2>
+            <p>Update the member's information below.</p>
+        </div>
+        <i class="bi bi-book"></i>
+    </div>
+
+    <form method="Post" class="form">
+        {% csrf_token %}
+        <div class="input_box">
+            <div class="input_icon"> <i class="bi bi-hash"></i></div>
+            <input type="text" name="id" value="{{ member.id }}" placeholder="Member ID ">
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"> <i class="bi bi-person-fill"></i></div>
+            <input type="text" name="name" value="{{ member.name }}" placeholder="Name">
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-envelope-check-fill"></i></div>
+            <input type="text" name="email" value="{{ member.email }}" placeholder="Email">
+        </div>
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-telephone"></i></div>
+            <input type="text" name="phon" value="{{ member.phon }}" placeholder="Phone Number">
+        </div>
+
+        <div class="button-box">
+            <div class="button-icon"><i class="bi bi-send-check-fill"></i></div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

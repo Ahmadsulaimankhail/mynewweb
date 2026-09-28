@@ -1,0 +1,51 @@
+{% extends "home.html" %}
+{% block main %}
+
+<div class="container">
+    <div class="form_head">
+        <div class="form_title">
+            <h2>Lend a Book</h2>
+            <p>Fill in the details below to lend a book from the library.</p>
+        </div>
+        <i class="bi bi-book"></i>
+    </div>
+
+    <form method="POST" class="form">
+        {% csrf_token %}
+        <div class="input_box">
+            <div class="input_icon"> <i class="bi bi-hash"></i></div>
+            <input type="text" name="bid" value="{{ book.bid }}">
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-calendar-fill"></i></div>
+            <input type="text" name="name" value="{{ book.bname }}">
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"> <i class="bi bi-book"></i></div>
+            <input type="text" name="aouthor" value="{{ book.aouthor }}">
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-person-fill"></i></div>
+            <input type="text" name="pub" value="{{ book.pub }}">
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-stack"></i></div>
+            <input type="text" name="pubyear" value="{{ book.pubyear }}">
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-building"></i></div>
+            <input type="text" name="quantity" value="{{ book.quantity }}">
+        </div>
+
+        <div class="button-box">
+            <div class="button-icon"><i class="bi bi-send-check-fill"></i></div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

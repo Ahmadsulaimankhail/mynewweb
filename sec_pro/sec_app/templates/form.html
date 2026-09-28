@@ -1,0 +1,58 @@
+{% extends "home.html" %}
+{% block main %}
+
+<div class="container">
+    <div class="form_head">
+        <div class="form_title">
+            <h2>Add New Book</h2>
+            <p>Fill in the details below to add a new book to the library.</p>
+        </div>
+        <i class="bi bi-book"></i>
+    </div>
+    <form method="POST" class="form">
+        {% csrf_token %}
+        <div class="input_box">
+            <div class="input_icon">
+                <i class="bi bi-hash"></i>
+            </div>
+            {{ form.bookId}}
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon">
+                <i class="bi bi-calendar-fill"></i>
+            </div>
+            {{ form.publicationYear }}
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon">
+                <i class="bi bi-book"></i>
+            </div>
+            {{ form.bookname }}
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-person-fill"></i>
+            </div>
+            {{ form.author}}
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-stack"></i></div>
+            {{ form.quantity}}
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-building"></i></div>
+            {{ form.publisher}}
+        </div>
+        <div class="button-box">
+            <div class="button-icon"><i class="bi bi-send-check-fill"></i></div>
+            <button type="submit">Submit</button>
+        </div>
+
+
+    </form>
+</div>
+{% endblock %}

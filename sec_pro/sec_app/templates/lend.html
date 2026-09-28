@@ -1,0 +1,91 @@
+{% extends "home.html" %}
+{% block main %}
+
+
+<div class="container">
+    <div class="form_head">
+        <div class="form_title">
+            <h2>Lend a Book</h2>
+            <p>Fill in the details below to lend a book from the library.</p>
+        </div>
+
+        <i class="bi bi-book"></i>
+
+    </div>
+    {% if error %}
+    <div
+        style="color: rgb(226, 123, 123); border: 1px solid rgb(239, 37, 37); padding: 5px; margin-left:40px ; width: 93%;">
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+
+    <form method="POST" class="form">
+
+        {% csrf_token %}
+
+        <div class="input_box">
+            <div class="input_icon">
+                <i class="bi bi-hash"></i>
+            </div>
+            {{ form.personId}}
+        </div>
+
+
+        <div class="input_box">
+            <div class="input_icon"> <i class="bi bi-person-fill"></i></div>
+            {{ form.pname }}
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-person-vcard-fill"></i></div>
+            {{ form.lname }}
+        </div>
+
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-book-fill"></i></div>
+            {{ form.book_id}}
+        </div>
+
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-envelope-fill"></i></div>
+            {{ form.book_name}}
+        </div>
+
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-stack"></i></div>
+            {{ form.quant}}
+        </div>
+
+        <div class="input_box">
+            <div class="input_icon"> <i class="bi bi-calendar-check-fill"></i></div>
+            {{ form.issue_date}}
+        </div>
+
+
+        <div class="input_box">
+            <div class="input_icon"><i class="bi bi-calendar-event-fill"></i> </div>
+            {{ form.return_date}}
+        </div>
+
+        <div class="button_cover">
+            <div class="button-box">
+                <div class="button-icon"><i class="bi bi-send-check-fill"></i></div>
+                <button type="submit">Submit</button>
+            </div>
+
+            <div class="button-box">
+                <a href="{% url 'home' %}">
+                    <div class="button-icon"><i class="bi bi-x-lg"></i></div>
+                    <button type="button">Cancel</button>
+                </a>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>
+{% endblock %}

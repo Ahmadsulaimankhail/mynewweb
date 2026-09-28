@@ -1,0 +1,42 @@
+[
+    {
+        "bid": 1,
+        "bname": "dari",
+        "author": "ahmad",
+        "pub": "skjdb.a",
+        "pubyear": 2002,
+        "quantity": 2
+    },
+    {
+        "bid": 2,
+        "bname": "english",
+        "author": "ramin",
+        "pub": "skjbv",
+        "pubyear": 2003,
+        "quantity": 4
+    },
+    {
+        "bid": 3,
+        "bname": "math",
+        "author": "khan",
+        "pub": "shva",
+        "pubyear": 2000,
+        "quantity": 6
+    },
+    {
+        "bid": 4,
+        "bname": "bignner",
+        "author": "ahmd",
+        "pub": "skjdb",
+        "pubyear": 1990,
+        "quantity": 4
+    },
+    {
+        "bid": 5,
+        "bname": "history",
+        "author": "ahmd",
+        "pub": "lsdjbvks",
+        "pubyear": 20,
+        "quantity": 5
+    }
+]

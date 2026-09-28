@@ -1,0 +1,42 @@
+[
+    {
+        "pid": 2,
+        "pname": "Raihana",
+        "lname": "sulaiman khail",
+        "book_id": 1,
+        "book_name": "dari",
+        "issue_date": "20/09/2026",
+        "return_date": "26/09/2026",
+        "quant": 1
+    },
+    {
+        "pid": 3,
+        "pname": "Nazanin",
+        "lname": "sulaiman khail",
+        "book_id": 2,
+        "book_name": "english",
+        "issue_date": "28/09/2026",
+        "return_date": "17/09/2026",
+        "quant": 2
+    },
+    {
+        "pid": 4,
+        "pname": "Samim",
+        "lname": "Ali",
+        "book_id": 2,
+        "book_name": "english",
+        "issue_date": "23/09/2026",
+        "return_date": "07/10/2026",
+        "quant": 2
+    },
+    {
+        "pid": 5,
+        "pname": "Ramin",
+        "lname": "Hamidi",
+        "book_id": 1,
+        "book_name": "dari",
+        "issue_date": "25/09/2026",
+        "return_date": "08/10/2026",
+        "quant": 1
+    }
+]
